@@ -1,0 +1,47 @@
+<%- include('partials/header') -%>
+
+<h2 class="text-center text-pink-900 text-xl font-semibold pt-2 ">MY LIST</h2>
+
+<!--Searching-->
+<div class="p-16  flex ">
+   <div class="md:w-1/2">
+   <form action="" class=" flex ">
+<input class="pr-36 rounded-l border-pink-700 border-l border-t border-b p-2 w-50 " type="text" placeholder="Search a book 📕..." >
+<button class="border rounded-r bg-pink-50 border-pink-700 p-2"  >🔍</button>
+</form>
+</div>
+
+</div>
+
+<div>
+  
+
+</div>
+
+<div class=" flex flex-wrap -mx-1 lg:-mx-4 px-16">
+
+   <% lists.forEach(function(list){ %>
+      <div class="bg-pink-50 border border-pink-700 text-pink-800 hover:shadow-lg rounded-lg p-10 text-lg box-content h-32 w-72 mb-4 md:ml-4 md:px-16">
+    <p class="font-bold "><%= list.title %></p>
+    <p class="font-light py-2">By <%= list.author %></p>
+    <p><%= list.rating %></p>
+    <div class="flex">
+    <div class="group mr-4"> 
+        <a class="" href="/delete/<%= list._id %>">🗑️</a>
+      <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/5 
+      -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">Delete</span>
+  </div>
+   <div class="group mr-4">
+      <a class="" href="/edit/<%= list._id %>">
+         📝</a>
+      <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/5 
+      -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">Edit</span>
+  </div>
+   </div>
+   </div>
+   <%}) %>
+  </div>
+
+
+  
+  <%- include('partials/footer') -%>
