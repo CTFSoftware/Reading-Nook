@@ -1,13 +1,29 @@
 <%- include('partials/header') -%>
 
-<h2 class="text-center text-pink-900 text-xl font-semibold pt-2 ">MY LIST</h2>
+<main>
 
+   <section class="py-5 text-center container">
+     <div class="row py-lg-5">
+       <div class="col-lg-6 col-md-8 mx-auto">
+         <h1 class="fw-light">My Library</h1>
+         <p class="lead text-muted">Here's Your Library! You can keep track of all your books with your ratings for them.</p>
+         <p>
+           <a href="/add" class="btn btn-primary my-2">Add Book</a>
+         </p>
+       </div>
+     </div>
+   </section>
+ 
 <!--Searching-->
 <div class="p-16  flex ">
    <div class="md:w-1/2">
    <form action="" class=" flex ">
-<input class="pr-36 rounded-l border-pink-700 border-l border-t border-b p-2 w-50 " type="text" placeholder="Search a book 📕..." >
-<button class="border rounded-r bg-pink-50 border-pink-700 p-2"  >🔍</button>
+<input class="pr-36 rounded-l border-pink-700 border-l border-t border-b p-2 w-50 " type="text" placeholder="Search a book..." >
+<button class="border rounded-r bg-pink-50 border-pink-700 p-2"  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+  </svg>
+</button>
 </form>
 </div>
 
@@ -18,22 +34,29 @@
 
 </div>
 
-<div class=" flex flex-wrap -mx-1 lg:-mx-4 px-16">
+
 
    <% lists.forEach(function(list){ %>
       <div class="bg-pink-50 border border-pink-700 text-pink-800 hover:shadow-lg rounded-lg p-10 text-lg box-content h-32 w-72 mb-4 md:ml-4 md:px-16">
     <p class="font-bold "><%= list.title %></p>
     <p class="font-light py-2">By <%= list.author %></p>
-    <p><%= list.rating %></p>
     <div class="flex">
     <div class="group mr-4"> 
-        <a class="" href="/delete/<%= list._id %>">🗑️</a>
+        <a class="" href="/delete/<%= list._id %>">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+          </svg>
+        </a>
       <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/5 
       -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">Delete</span>
   </div>
    <div class="group mr-4">
       <a class="" href="/edit/<%= list._id %>">
-         📝</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-pencil" viewBox="0 0 16 16">
+          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+        </svg>
+      </a>
       <span class="group-hover:opacity-100 transition-opacity bg-gray-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/5 
       -translate-x-1/2 translate-y-full opacity-0 m-4 mx-auto">Edit</span>
   </div>
