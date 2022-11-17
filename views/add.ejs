@@ -7,15 +7,11 @@
         <form action="/add" method="post" class="flex flex-col md:px-64 px-16 ">
           <input class="p-2 mb-2 border rounded-md border-pink-900 font-light	" type="text" name="enterTitle" placeholder="Enter Book name" required>
           <input class="p-2 mb-2 border rounded-md border-pink-900 font-light" type="text" name="enterAuthor" placeholder="Enter Author name" required>
-
-        <select class="p-2 mb-2 border rounded-md border-pink-900 font-light" name="enterRating" id="enterRating" placeholder="Select your rating">
-            <option value="" name="">Select your rating</option>
-            <option value="⭐⭐⭐⭐⭐" name="5stars">⭐⭐⭐⭐⭐</option>
-            <option value="⭐⭐⭐⭐" name="4stars">⭐⭐⭐⭐</option>
-            <option value="⭐⭐⭐" name="3stars" >⭐⭐⭐</option>
-            <option value="⭐⭐" name="2stars">⭐⭐</option>
-            <option value="⭐" name="1star">⭐</option>
-          </select>
+          <div class="mb-3">
+            <label for="imgUpload" class="form-label">Image</label>
+            <input type="file" class="form-control" id="imageUpload" name="file">
+          </div>
+     
           <input class=" p-2 bg-pink-100  rounded-md"  type="submit" name ='button' value="Submit">
         </form>
           
